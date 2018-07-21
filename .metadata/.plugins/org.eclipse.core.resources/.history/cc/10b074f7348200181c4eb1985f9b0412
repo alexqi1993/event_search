@@ -1,0 +1,31 @@
+(function() {
+	var user_id = '1111';
+	var user_fullname = 'abcd';
+	var lng = -122.08;
+	var lat = 37.38;
+	
+	init();
+	
+	/* step5: create $ function */
+	/**
+	 * A helper function that creates a DOM element <tag options...>
+	 */
+	function $(tag, options) {
+		if (!options) {
+			return document.getElementById(tag);
+		}
+		var element = document.createElement(tag);
+
+		for ( var option in options) {
+			if (options.hasOwnProperty(option)) {
+				element[option] = options[option];
+			}
+		}
+		return element;
+	}
+
+	function init() {
+		$('nearby-btn').addEventListener('click', loadNearbyItems);
+	}
+	
+})();
